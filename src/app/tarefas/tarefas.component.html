@@ -1,0 +1,42 @@
+<div class="container">
+  <h2>Cadastrar tarefa: </h2>
+  <hr>
+<form>
+  <div class="form-group">
+     <label>id: <input type="number" name="id" [(ngModel)]="tarefa.id"></label>
+    </div>
+    <div class="form-group">
+      <label>title: <input type="text" name="idade" [(ngModel)]="tarefa.title"></label>
+    </div>
+    <div class="form-group">
+     <label><button type="button" (click)="cadastrar()">Cadastrar</button></label>
+    </div>
+    <div class="form-group">
+     <label><button (click)="atualizar(tarefa.id)">Atualizar</button></label>
+    </div>
+
+</form>
+
+<h2>Tarefas Cadastradas: </h2>
+<hr>
+
+<div class="form-group">
+<table>
+  <tr>
+    <th>userId</th>
+    <th>id</th>
+    <th>title</th>
+    <th>completed</th>
+  </tr>
+
+  <tr *ngFor="let tarefa of tarefas">
+    <td>{{tarefa.userId}}</td>
+    <td>{{tarefa.id}}</td>
+    <td>{{tarefa.title}}</td>
+    <td>{{tarefa.completed}}</td>
+    <td><button (click)="remover(tarefa.id)">Remover</button></td>
+  </tr>
+</table>
+</div>
+
+</div>
