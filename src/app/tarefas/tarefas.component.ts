@@ -11,6 +11,7 @@ export class TarefasComponent implements OnInit {
 
   tarefa: TarefaModel = new TarefaModel();
   tarefas: Array<any> = new Array();
+  isOpen = false;
 
   constructor(private tarefasService: TarefasService) { }
 
@@ -46,6 +47,7 @@ export class TarefasComponent implements OnInit {
     })
   }
 
+
   listarTarefas(){
     this.tarefasService.listarTarefas().subscribe(tarefas => {
       this.tarefas = tarefas;
@@ -54,4 +56,11 @@ export class TarefasComponent implements OnInit {
     })
   }
 
+  modeloOpen(){
+    this.isOpen = true;
+  }
+
+  modeloClose(){
+    this.isOpen = false;
+  }
 }
